@@ -1,4 +1,6 @@
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -10,6 +12,8 @@ app.use(cors());
 app.use(express.json());
 
 const { connectDB } = require('./config/db');
+const MONGO_URI = process.env.MONGODB_URI;
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // Connect to MongoDB
 connectDB();
@@ -26,5 +30,7 @@ app.use('/api/customers', require('./routes/customers'));
 app.use('/api/roles', require('./routes/roles'));
 app.use('/api/settings', require('./routes/settings'));
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+    console.log(`Server listening on ${port}`);
+});
