@@ -7,7 +7,7 @@ import { PageHeader, DataTable, FormInput, SelectDropdown, Modal } from '../comp
 import { ToastProvider, useToast } from '../components/shared/ToastContext';
 import { useAuth } from '../context/AuthContext';
 
-const API = 'http://localhost:5000';
+const API = '';
 
 const ROLE_META = {
   super_admin:      { label: 'Super Admin',      color: '#ef4444', bg: '#ef444420' },

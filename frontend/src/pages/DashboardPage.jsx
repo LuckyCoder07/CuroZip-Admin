@@ -32,7 +32,7 @@ const fmtCurrency = (n) =>
   typeof n === 'number' ? '₹' + n.toLocaleString('en-IN', { maximumFractionDigits: 0 }) : '₹0';
 
 const api = (path, token) =>
-  axios.get(`http://localhost:5000${path}`, { headers: { Authorization: `Bearer ${token}` } });
+  axios.get(`${path}`, { headers: { Authorization: `Bearer ${token}` } });
 
 // ─── Themed Tooltip ──────────────────────────────────────────────────────────
 const ChartTooltip = ({ active, payload, label }) => {

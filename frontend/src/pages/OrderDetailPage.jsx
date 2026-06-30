@@ -11,7 +11,7 @@ import { StatusBadge, Modal, SelectDropdown, OrderLifecycleTracker } from '../co
 import { ToastProvider, useToast } from '../components/shared/ToastContext';
 import { useAuth } from '../context/AuthContext';
 
-const API = 'http://localhost:5000';
+const API = '';
 
 const fmtDate = (d, long = false) => {
   if (!d) return '—';

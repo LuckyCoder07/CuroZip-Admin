@@ -7,7 +7,7 @@ import { PageHeader, DataTable, FormInput, SelectDropdown, Modal } from '../comp
 import { ToastProvider, useToast } from '../components/shared/ToastContext';
 import { useAuth } from '../context/AuthContext';
 
-const API = 'http://localhost:5000';
+const API = '';
 
 const VEHICLE_META = {
   'Volvo Bus':    { color: '#3b82f6', bg: '#3b82f620' },

@@ -6,7 +6,7 @@ import { DataTable, FormInput, PageHeader, Modal } from '../components/shared';
 import { ToastProvider, useToast } from '../components/shared/ToastContext';
 import { useAuth } from '../context/AuthContext';
 
-const API = 'http://localhost:5000';
+const API = '';
 
 const DepartmentDrawer = ({ isOpen, onClose, deptData, onSuccess }) => {
   const { token } = useAuth();
