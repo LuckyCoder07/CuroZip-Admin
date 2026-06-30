@@ -105,7 +105,7 @@ const HubDetailContent = () => {
   const fetchHub = useCallback(async () => {
     setHubLoading(true);
     try {
-      const res = await axios.get(`http://localhost:5000/api/hubs/${id}`, {
+      const res = await axios.get(`/api/hubs/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setHub(res.data);
@@ -122,7 +122,7 @@ const HubDetailContent = () => {
   useEffect(() => {
     if (activeTab !== 'orders') return;
     setOrdersLoading(true);
-    axios.get(`http://localhost:5000/api/orders/hub/${id}`, {
+    axios.get(`/api/orders/hub/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     }).then(res => {
       setOrders(res.data || []);
@@ -133,7 +133,7 @@ const HubDetailContent = () => {
   useEffect(() => {
     if (activeTab !== 'partners') return;
     setPartnersLoading(true);
-    axios.get(`http://localhost:5000/api/users/delivery-partners/${id}`, {
+    axios.get(`/api/users/delivery-partners/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     }).then(res => {
       setPartners(res.data || []);
@@ -143,7 +143,7 @@ const HubDetailContent = () => {
   // ── Open assign modal: fetch all delivery partners ──────────────────
   const openAssignModal = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/users', {
+      const res = await axios.get('/api/users', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const opts = (res.data || [])
@@ -159,14 +159,14 @@ const HubDetailContent = () => {
     if (!selectedPartner) return;
     setAssigning(true);
     try {
-      await axios.put(`http://localhost:5000/api/users/${selectedPartner}`,
+      await axios.put(`/api/users/${selectedPartner}`,
         { hubId: id },
         { headers: { Authorization: `Bearer ${token}` } }
       );
       addToast('Partner assigned successfully.', 'success');
       setAssignModalOpen(false);
       // Refresh partners list
-      const res = await axios.get(`http://localhost:5000/api/users/delivery-partners/${id}`, {
+      const res = await axios.get(`/api/users/delivery-partners/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPartners(res.data || []);

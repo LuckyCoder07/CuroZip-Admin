@@ -111,7 +111,7 @@ const HubDrawer = ({ isOpen, onClose, hubData, onSuccess }) => {
       setErrors({});
 
       // Fetch hub managers
-      axios.get('http://localhost:5000/api/users', {
+      axios.get('/api/users', {
         headers: { Authorization: `Bearer ${token}` },
       }).then(res => {
         const opts = [{ value: null, label: '— No Manager —' }];
@@ -151,12 +151,12 @@ const HubDrawer = ({ isOpen, onClose, hubData, onSuccess }) => {
     try {
       let res;
       if (isEdit) {
-        res = await axios.put(`http://localhost:5000/api/hubs/${hubData._id}`, payload, {
+        res = await axios.put(`/api/hubs/${hubData._id}`, payload, {
           headers: { Authorization: `Bearer ${token}` },
         });
         addToast('Hub updated successfully.', 'success');
       } else {
-        res = await axios.post('http://localhost:5000/api/hubs', payload, {
+        res = await axios.post('/api/hubs', payload, {
           headers: { Authorization: `Bearer ${token}` },
         });
         addToast('Hub created successfully.', 'success');

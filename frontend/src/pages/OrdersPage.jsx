@@ -8,7 +8,7 @@ import { PageHeader, DataTable, StatusBadge, SelectDropdown, FormInput } from '.
 import { ToastProvider, useToast } from '../components/shared/ToastContext';
 import { useAuth } from '../context/AuthContext';
 
-const API = 'http://localhost:5000';
+const API = '';
 
 const ALL_STATUSES = [
   'Booked', 'Pickup Assigned', 'Picked Up', 'In Transit',

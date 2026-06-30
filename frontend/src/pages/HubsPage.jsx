@@ -19,7 +19,7 @@ const ToggleSwitch = ({ hubId, isActive, token, onToggle }) => {
     setLoading(true);
     try {
       await axios.put(
-        `http://localhost:5000/api/hubs/${hubId}`,
+        `/api/hubs/${hubId}`,
         { isActive: !isActive },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -82,7 +82,7 @@ const HubsPageContent = () => {
   const fetchHubs = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await axios.get('http://localhost:5000/api/hubs?all=true', {
+      const res = await axios.get('/api/hubs?all=true', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setHubs(res.data || []);

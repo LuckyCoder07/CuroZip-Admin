@@ -6,7 +6,7 @@ import { DataTable, FormInput, PageHeader } from '../components/shared';
 import { ToastProvider, useToast } from '../components/shared/ToastContext';
 import { useAuth } from '../context/AuthContext';
 
-const API = 'http://localhost:5000';
+const API = '';
 
 const PERMISSION_GROUPS = [
   {
