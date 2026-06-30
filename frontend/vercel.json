@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://curozip-backend.onrender.com/api/:path*"
+      "destination": "https://curozip-admin.onrender.com/api/:path*"
     },
     {
       "source": "/(.*)",
